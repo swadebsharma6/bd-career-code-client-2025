@@ -31,15 +31,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/register">
-          {({ isActive }) => (
-            <span
-              className={isActive ? "font-bold underline text-primary" : ""}
-            >
-             Register
-            </span>
-          )}
-        </NavLink>
+        
       </li>
       
     </>
@@ -85,6 +77,18 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
+        <p className="mr-6">
+          <NavLink to="/register">
+          {({ isActive }) => (
+            <span
+              className={isActive ? "font-bold underline text-primary" : ""}
+            >
+             Register
+            </span>
+          )}
+        </NavLink>
+        </p>
+
         {
           user ? <button onClick={handleSignOut} className="btn btn-secondary">Sign Out</button> : <button className="btn btn-primary">
               <NavLink to="/signin">

@@ -1,5 +1,6 @@
 
 import { AuthContext } from "../../context/AuthContext/AuthContext";
+import Banner from "./HomeComponents/Banner";
 
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
 
       return (
             <div>
-               <h3 className="text-center text-2xl">Home Pages</h3>   
+             <Banner/>   
             </div>
       );
 };
