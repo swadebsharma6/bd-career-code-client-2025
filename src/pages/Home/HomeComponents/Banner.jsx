@@ -4,7 +4,7 @@ import team2 from "../../../assets/teams/team2.jpg";
 
 const Banner = () => {
   return (
-    <div className="hero  min-h-[700px]">
+    <div className="hero  min-h-175">
       <div className="hero-content flex-col lg:flex-row-reverse">
         {/* image box */}
         <div className="flex-1">
