@@ -3,10 +3,13 @@ import lottieSignin from "../../assets/lotties/login.json";
 import { use } from "react";
 import { AuthContext } from "../../context/AuthContext/AuthContext";
 import SocialLogin from "../../components/Shared/SocialLogin";
+import { useLocation, useNavigate } from "react-router";
 
 const Signin = () => {
 
       const { signInUser} = use(AuthContext);
+      const navigate = useNavigate();
+      const location = useLocation();
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -18,7 +21,11 @@ const Signin = () => {
     //signIn user in firebase
     signInUser(email, password)
     .then(result =>{
-      console.log('sign', result.user)
+      console.log('sign', result.user);
+
+      //Redirect after signin user
+      navigate(location.state || '/');
+
     })
     .catch(error =>{
       console.log(error.message)

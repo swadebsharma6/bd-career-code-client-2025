@@ -59,7 +59,7 @@ const JobDetails = () => {
                       <h2 className="py-4"><span className="text-primary text-xl font-bold">${salaryRange.min} - {salaryRange.max}</span>/ M</h2>
           
                      <button className="btn btn-soft btn-primary">
-                      <Link to={`/jobs/${_id}`}>Apply Now</Link>
+                      <Link to={`/jobApply/${_id}`}>Apply Now</Link>
                      </button>
                   </div>
                 </div>

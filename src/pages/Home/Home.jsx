@@ -19,7 +19,6 @@ useEffect(()=>{
             <div>
              <Banner/>   
              <HotJobs jobs={jobs}></HotJobs>
-             <Loading/>
             </div>
       );
 };
