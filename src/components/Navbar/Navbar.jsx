@@ -19,6 +19,21 @@ const Navbar = () => {
           )}
         </NavLink>
       </li>
+      {
+        user  && <>
+         <li>
+        <NavLink to="/myApplications">
+          {({ isActive }) => (
+            <span
+              className={isActive ? "font-bold underline text-primary" : ""}
+            >
+              My Applications
+            </span>
+          )}
+        </NavLink>
+      </li>
+        </>
+      }
       <li>
         <NavLink to="/find-jobs">
           {({ isActive }) => (
@@ -30,9 +45,7 @@ const Navbar = () => {
           )}
         </NavLink>
       </li>
-      <li>
-        
-      </li>
+      
       
     </>
   );

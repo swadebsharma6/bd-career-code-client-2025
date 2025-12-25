@@ -1,8 +1,7 @@
 
-import Loading from "../../components/Shared/Loading";
 import Banner from "./HomeComponents/Banner";
 import HotJobs from "./HomeComponents/HotJobs";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 
 const Home = () => {
@@ -18,7 +17,9 @@ useEffect(()=>{
       return (
             <div>
              <Banner/>   
-             <HotJobs jobs={jobs}></HotJobs>
+             <Suspense fallback={'Loading hot jobs'}>
+                  <HotJobs jobs={jobs}></HotJobs>
+             </Suspense>
             </div>
       );
 };
