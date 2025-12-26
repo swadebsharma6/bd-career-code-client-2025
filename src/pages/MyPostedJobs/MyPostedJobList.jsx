@@ -14,6 +14,7 @@ const MyPostedJobList = ({ jobsRecruiterByPromise }) => {
               <th>Job Title</th>
               <th>Company</th>
               <th>DeadLine</th>
+              <th>Apply Count</th>
               <th>View Applications</th>
             </tr>
           </thead>
@@ -23,6 +24,7 @@ const MyPostedJobList = ({ jobsRecruiterByPromise }) => {
                 <th>{idx + 1}</th>
                 <td>{job.title}</td>
                 <td>{job.company}</td>
+                <td>{job.application_count}</td>
                 <td>{job.applicationDeadline}</td>
                 <td className="btn btn-sm btn-soft btn-primary">
                   <Link to={`/applications/${job._id}`}>View Application</Link>
