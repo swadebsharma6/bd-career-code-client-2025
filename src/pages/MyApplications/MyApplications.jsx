@@ -16,7 +16,6 @@ const MyApplications = () => {
       <Suspense fallback={'loading your job application'}>
         <ApplicationList
         myApplicationPromise={myApplicationPromise(user.email)}
-        
         />
       </Suspense>
     </div>

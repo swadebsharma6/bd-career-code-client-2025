@@ -19,6 +19,7 @@ const Navbar = () => {
           )}
         </NavLink>
       </li>
+      {/* Only for Applicant links check role as well */}
       {
         user  && <>
          <li>
@@ -32,6 +33,33 @@ const Navbar = () => {
           )}
         </NavLink>
       </li>
+        </>
+      }
+      {/* for recruiter. check role as well */}
+      {
+        user && <>
+           <li>
+        <NavLink to="/addJob">
+          {({ isActive }) => (
+            <span
+              className={isActive ? "font-bold underline text-primary" : ""}
+            >
+              Add a Job
+            </span>
+          )}
+        </NavLink>
+           </li>
+           <li>
+        <NavLink to="/myPostedJobs">
+          {({ isActive }) => (
+            <span
+              className={isActive ? "font-bold underline text-primary" : ""}
+            >
+              My Posted Jobs-(recruiter)
+            </span>
+          )}
+        </NavLink>
+           </li>
         </>
       }
       <li>
@@ -57,7 +85,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-2xl sticky top-0 z-50 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

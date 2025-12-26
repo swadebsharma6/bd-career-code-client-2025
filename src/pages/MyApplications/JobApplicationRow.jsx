@@ -1,9 +1,5 @@
 const JobApplicationRow = ({ application, idx }) => {
   const {
-    linkedIn,
-    resume,
-    github,
-    jobId,
     company, title, company_logo,
   } = application;
   return (
