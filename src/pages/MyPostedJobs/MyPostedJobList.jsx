@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const MyPostedJobList = ({ jobsRecruiterByPromise }) => {
   const jobs = use(jobsRecruiterByPromise);
-  console.log(jobs);
+ 
   return (
     <div className="my-32">
       <div className="overflow-x-auto">

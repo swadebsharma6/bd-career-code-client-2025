@@ -2,7 +2,9 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import { auth } from "../../firebase/firebase.config";
 import { AuthContext } from "./AuthContext";
 import { useEffect, useState } from "react";
-   import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
+import axios from "axios";
+
 
 
 const AuthProvider = ({children}) => {
@@ -36,6 +38,20 @@ const AuthProvider = ({children}) => {
                   console.log('observer', currentUser);
                   setUser(currentUser);
                   setLoading(false);
+
+                  if (currentUser?.email){
+                        const userData =  {email: currentUser?.email};
+                        axios.post("http://localhost:3000/jwt", userData,{
+                              withCredentials: true
+                        })
+                        .then(res =>{
+                              console.log(res.data)
+                        })
+                        .catch(error => alert(error.message));
+                        
+                  }
+
+                  
             })
 
             return ()=>{
