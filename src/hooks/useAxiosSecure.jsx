@@ -26,9 +26,10 @@ const useAxiosSecure = () => {
                   alert('user signout successfully')
              })
              .catch(error =>{
-                 alert(error.message)
+                console.log(error.message)
              })
       }
+
       return Promise.reject(error);
  })
 
