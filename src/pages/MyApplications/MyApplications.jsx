@@ -12,7 +12,7 @@ const MyApplications = () => {
       const {myApplicationPromise} = useApplicationApi()
 
       //myApplications find user accessToken
-      console.log(user.accessToken)
+      // console.log(user.accessToken)
 
      
 

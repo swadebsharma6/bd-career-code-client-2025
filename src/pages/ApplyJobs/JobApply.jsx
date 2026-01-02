@@ -25,7 +25,7 @@ const JobApply = () => {
     };
 
     axios
-      .post("http://localhost:3000/applications", application)
+      .post("https://bd-career-code-server-2025.vercel.app/applications", application)
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {
