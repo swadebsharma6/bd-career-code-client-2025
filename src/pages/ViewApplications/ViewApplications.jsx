@@ -10,7 +10,7 @@ const ViewApplications = () => {
 //     console.log(e.target.value, app_id);
 
     axios
-      .patch(`https://bd-career-code-server-2025.vercel.app/applications/${app_id}`, { status: e.target.value})
+      .patch(`http://localhost:3000/applications/${app_id}`, { status: e.target.value})
       .then((res) => {
         if (res.data.modifiedCount) {
           Swal.fire({

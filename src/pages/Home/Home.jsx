@@ -8,7 +8,7 @@ const Home = () => {
       const [jobs, setJobs] = useState([]);
 
 useEffect(()=>{
-      fetch(`https://bd-career-code-server-2025.vercel.app/jobs`)
+      fetch(`http://localhost:3000/jobs`)
       .then(res => res.json())
       .then(data =>{
             setJobs(data)
