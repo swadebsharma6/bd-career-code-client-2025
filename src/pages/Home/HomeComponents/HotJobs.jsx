@@ -1,11 +1,12 @@
 
+import { use } from "react";
 import HotJobCard from "../../Shared/HotJobCard";
 
 
 
-const HotJobs = ({jobs}) => {
+const HotJobs = ({jobsPromise}) => {
 
-      
+      const jobs = use(jobsPromise)
 
       return (
             <div>

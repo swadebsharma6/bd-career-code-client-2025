@@ -1,25 +1,17 @@
 
 import Banner from "./HomeComponents/Banner";
 import HotJobs from "./HomeComponents/HotJobs";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 
 
 const Home = () => {
-      const [jobs, setJobs] = useState([]);
-
-useEffect(()=>{
-      fetch(`https://bd-career-code-server-2025.vercel.app/jobs`)
-      .then(res => res.json())
-      .then(data =>{
-            setJobs(data)
-      })
-}, [])
+     const jobsPromise = fetch('https://bd-career-code-server-2025.vercel.app/jobs').then(res => res.json())
 
       return (
             <div>
              <Banner/>   
              <Suspense fallback={'Loading hot jobs'}>
-                  <HotJobs jobs={jobs}></HotJobs>
+                  <HotJobs jobsPromise={jobsPromise}></HotJobs>
              </Suspense>
             </div>
       );
